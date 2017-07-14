@@ -2,11 +2,14 @@
 	"name":"laravelboot/framework",
 	"description":"The LaravelBoot Foundation Framework",
 	"keywords":["laravelboot","laravel","foundation","framework"],
-	"homepage":"",
 	"license":"Apache-2.0",
-	"authors":[{"name":"mawenpei","email":"249350293@qq.com"}],
+	"authors":[
+		{"name":"mawenpei","email":"249350293@qq.com"}
+	],
 	"autoload":{
-	    "psr-4":{"LaravelBoot\\Foundation":"src/"}
+	    "psr-4":{
+			"LaravelBoot\\Foundation":"src/"
+		}
 	},
 	"require":{
 		"php":">=5.6",
@@ -59,10 +62,11 @@
         "symfony/workflow": "3.3.*",
         "symfony/yaml": "3.3.*",
         "tijsverkoyen/css-to-inline-styles": "~2.2",
-        "vlucas/phpdotenv": "~2.2"，
+        "vlucas/phpdotenv": "~2.2",
 		"predis/predis": "^1.0",
 		"rcrowe/twigbridge": "^0.9.2",
 		"guzzlehttp/guzzle":"^6.0",
-		"endroid/qrcode": "^1.7"
+		"endroid/qrcode": "^1.7",
+		"pda/pheanstalk": "~3.0"
 	}
 }
