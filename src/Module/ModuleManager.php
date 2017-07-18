@@ -223,7 +223,7 @@ class ModuleManager
      *
      * @return string
      */
-    public function getModulePath(): string
+    public function getModulePath()
     {
         return $this->container->basePath() . DIRECTORY_SEPARATOR . $this->configuration->get('module.directory');
     }
