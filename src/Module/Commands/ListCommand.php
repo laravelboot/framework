@@ -48,7 +48,7 @@ class ListCommand extends Command
      *
      * @return bool
      */
-    public function fire(ModuleManager $manager): bool
+    public function fire(ModuleManager $manager)
     {
         $modules = $manager->getModules();
         $list = new Collection();

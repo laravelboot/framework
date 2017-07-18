@@ -33,7 +33,7 @@ class GenerateCommand extends Command
      *
      * @return bool
      */
-    public function fire(): bool
+    public function fire()
     {
         return true;
     }

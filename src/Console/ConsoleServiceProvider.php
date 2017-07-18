@@ -20,7 +20,6 @@ use Illuminate\Database\Console\Migrations\RefreshCommand as MigrateRefreshComma
 use Illuminate\Database\Console\Migrations\RollbackCommand as MigrateRollbackCommand;
 use Illuminate\Queue\Console\FailedTableCommand;
 use Illuminate\Queue\Console\TableCommand;
-use LaravelBoot\Foundation\Cache\Commands\CacheTableCommand;
 use LaravelBoot\Foundation\Console\Commands\AppNameCommand;
 use LaravelBoot\Foundation\Console\Commands\ClearCompiledCommand;
 use LaravelBoot\Foundation\Console\Commands\ConfigCacheCommand;
@@ -30,11 +29,9 @@ use LaravelBoot\Foundation\Console\Commands\EnvironmentCommand;
 use LaravelBoot\Foundation\Console\Commands\VendorPublishCommand;
 use LaravelBoot\Foundation\Database\Commands\SeederMakeCommand;
 use LaravelBoot\Foundation\Http\Abstracts\ServiceProvider;
-use LaravelBoot\Foundation\Mail\Commands\MailMakeCommand;
 use LaravelBoot\Foundation\Routing\Commands\RouteCacheCommand;
 use LaravelBoot\Foundation\Routing\Commands\RouteClearCommand;
 use LaravelBoot\Foundation\Routing\Commands\RouteListCommand;
-use LaravelBoot\Foundation\Session\Commands\SessionTableCommand;
 
 /**
  * Class ArtisanServiceProvider.
@@ -75,13 +72,6 @@ class ConsoleServiceProvider extends ServiceProvider
      * @var array
      */
     protected $devCommands = [
-        'CacheTable'        => 'command.cache.table',
-        'MailMake'          => 'command.mail.make',
-        'MigrateMake'       => 'command.migrate.make',
-        'QueueFailedTable'  => 'command.queue.failed-table',
-        'QueueTable'        => 'command.queue.table',
-        'SeederMake'        => 'command.seeder.make',
-        'SessionTable'      => 'command.session.table',
         'Serve'             => 'command.serve',
         'VendorPublish'     => 'command.vendor.publish',
     ];
@@ -119,16 +109,6 @@ class ConsoleServiceProvider extends ServiceProvider
     {
         $this->app->singleton('command.app.name', function ($app) {
             return new AppNameCommand($app['composer'], $app['files']);
-        });
-    }
-
-    /**
-     * Register the command.
-     */
-    protected function registerCacheTableCommand()
-    {
-        $this->app->singleton('command.cache.table', function ($app) {
-            return new CacheTableCommand($app['files'], $app['composer']);
         });
     }
 
@@ -199,16 +179,6 @@ class ConsoleServiceProvider extends ServiceProvider
     {
         $this->app->singleton('command.key.generate', function () {
             return new Commands\KeyGenerateCommand();
-        });
-    }
-
-    /**
-     * Register the command.
-     */
-    protected function registerMailMakeCommand()
-    {
-        $this->app->singleton('command.mail.make', function ($app) {
-            return new MailMakeCommand($app['files']);
         });
     }
 
