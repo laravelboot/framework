@@ -23,7 +23,7 @@ return [
     'log_level'       => env('APP_LOG_LEVEL', 'debug'),
     'providers'       => [
         //LaravelBoot\Foundation\Attachment\AttachmentServiceProvider::class,
-        //LaravelBoot\Foundation\Auth\AuthServiceProvider::class,
+        LaravelBoot\Foundation\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         //LaravelBoot\Foundation\Bus\BusServiceProvider::class,
         //LaravelBoot\Foundation\Cache\CacheServiceProvider::class,
