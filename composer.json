@@ -7,6 +7,7 @@
 		{"name":"mawenpei","email":"249350293@qq.com"}
 	],
 	"autoload":{
+        "files":["src/helpers.php"],
 	    "psr-4":{
 			"LaravelBoot\\Foundation\\":"src/"
 		}
