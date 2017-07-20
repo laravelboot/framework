@@ -36,6 +36,8 @@ class Application extends Container implements ApplicationContract,HttpKernelInt
 {
 	const VERSION = '0.1.0';
 
+	protected $appName;
+
 	/**
 	 * @var string
 	 */
@@ -123,15 +125,22 @@ class Application extends Container implements ApplicationContract,HttpKernelInt
 
 	/**
 	 * @param string|null $basePath
+	 * @param string $appName
 	 */
-	public function __construct($basePath = null)
+	public function __construct($basePath = null,$appName='laravelboot')
 	{
+		$this->appName = $appName;
 		$this->registerBaseBindings();
 		$this->registerBaseServiceProviders();
 		$this->registerCoreContainerAliases();
 		if ($basePath) {
 			$this->setBasePath(realpath($basePath));
 		}
+	}
+
+	public function getName()
+	{
+		return $this->appName;
 	}
 
 	/**

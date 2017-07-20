@@ -52,19 +52,7 @@ abstract class Module extends ServiceProvider
      */
     abstract public function boot();
 
-    /**
-     * Description of module
-     *
-     * @return string
-     */
-    abstract public static function description();
 
-    /**
-     * Install for module.
-     *
-     * @return string
-     */
-    abstract public static function install();
 
     /**
      * @param array|string $paths
@@ -78,32 +66,4 @@ abstract class Module extends ServiceProvider
     public static function migrations() {
         return static::$migrations->toArray();
     }
-
-    /**
-     * Name of module.
-     *
-     * @return string
-     */
-    abstract public static function name();
-
-    /**
-     * Register module extra providers.
-     */
-    public function register()
-    {
-    }
-
-    /**
-     * Uninstall for module.
-     *
-     * @return string
-     */
-    abstract public static function uninstall();
-
-    /**
-     * Version of module.
-     *
-     * @return string
-     */
-    abstract public static function version();
 }

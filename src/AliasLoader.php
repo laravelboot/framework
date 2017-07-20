@@ -43,7 +43,7 @@ class AliasLoader
      *
      * @param array $aliases
      *
-     * @return \Notadd\Foundation\AliasLoader
+     * @return \LaravelBoot\Foundation\AliasLoader
      */
     public static function getInstance(array $aliases = [])
     {
