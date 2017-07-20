@@ -132,7 +132,7 @@ class ModuleManager
                         $package = new Collection(json_decode($this->files->get($file), true));
                         $identification = Arr::get($package, 'name');
                         $type = Arr::get($package, 'type');
-                        if ($type == 'notadd-module' && $identification) {
+                        if ($type == 'laravelboot-module' && $identification) {
                             $provider = '';
                             if ($entries = data_get($package, 'autoload.psr-4')) {
                                 foreach ($entries as $namespace => $entry) {
