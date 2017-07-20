@@ -88,7 +88,7 @@ class Module
     /**
      * @return array
      */
-    public function getAlias(): array
+    public function getAlias()
     {
         return $this->alias;
     }
@@ -178,7 +178,7 @@ class Module
      *
      * @return string
      */
-    public function getVersion(): string
+    public function getVersion()
     {
         return $this->version;
     }
