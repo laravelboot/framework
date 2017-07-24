@@ -62,6 +62,7 @@ return [
         LaravelBoot\Foundation\Validation\ValidationServiceProvider::class,
         LaravelBoot\Foundation\Yaml\YamlServiceProvider::class,
         LaravelBoot\Foundation\Http\HttpServiceProvider::class,
+        LaravelBoot\Foundation\Network\NetworkServiceProvider::class
         //LaravelBoot\Foundation\Administration\AdministrationServiceProvider::class,
     ],
     'aliases'         => [

@@ -7,18 +7,25 @@
 		{"name":"mawenpei","email":"249350293@qq.com"}
 	],
 	"autoload":{
-        "files":["src/helpers.php"],
+        "files":[
+                "src/helpers.php",
+                "src/Coroutine/Command/Task.php"
+        ],
 	    "psr-4":{
 			"LaravelBoot\\Foundation\\":"src/"
 		}
 	},
+    "autoload-dev":{
+        "psr-4":{
+            "Module\\Demo\\":"example/demo/"
+        }
+    },
 	"require":{
 		"php":">=5.6",
 		"ext-mbstring":"*",
 		"ext-openssl":"*",
         "ext-hprose": ">=1.6.5",
 		"illuminate/auth":"5.4.*",
-		"illuminate/auth": "5.4.*",
         "illuminate/broadcasting": "5.4.*",
         "illuminate/bus": "5.4.*",
         "illuminate/cache": "5.4.*",

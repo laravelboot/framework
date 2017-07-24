@@ -683,7 +683,7 @@ class Application extends Container implements ApplicationContract,HttpKernelInt
 			$this->loadDeferredProvider($abstract);
 		}
 
-		return parent::make($abstract, $parameters);
+		return parent::makeWith($abstract, $parameters);
 	}
 
 	/**
@@ -1128,9 +1128,13 @@ class Application extends Container implements ApplicationContract,HttpKernelInt
 				'Illuminate\Redis\RedisManager',
 				'Illuminate\Contracts\Redis\Factory',
 			],
+			'context'                   => [
+				'LaravelBoot\Foundation\Contracts\Context'
+			],
 			'request'                   => [
 				'Illuminate\Http\Request',
 				'Symfony\Component\HttpFoundation\Request',
+				'LaravelBoot\Foundation\Network\Http\Request\Request'
 			],
 			'router'                    => [
 				'Illuminate\Routing\Router',

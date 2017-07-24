@@ -13,6 +13,7 @@ namespace LaravelBoot\Foundation\Routing\Abstracts;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Routing\Controller as IlluminateController;
+use LaravelBoot\Foundation\Application;
 use LaravelBoot\Foundation\Routing\Traits\Flowable;
 use LaravelBoot\Foundation\Routing\Traits\Logable;
 use LaravelBoot\Foundation\Routing\Traits\Permissionable;
@@ -48,6 +49,11 @@ abstract class Controller extends IlluminateController
     protected $request;
 
     /**
+     * @var \LaravelBoot\Foundation\Contracts\Context
+     */
+    protected $context;
+
+    /**
      * @var array
      */
     protected $permissions = [];
@@ -66,6 +72,7 @@ abstract class Controller extends IlluminateController
         $this->events = $this->container->make('events');
         $this->redirector = $this->container->make('redirect');
         $this->request = $this->container->make('request');
+        $this->context = $this->container->make('context');
         if ($this->permissions) {
             foreach ($this->permissions as $permission=>$methods) {
                 $this->middleware('permission:' . $permission)->only($methods);
@@ -118,7 +125,7 @@ abstract class Controller extends IlluminateController
      */
     public function getContainer()
     {
-        return Container::getInstance();
+        return Application::getInstance();
     }
 
     /**
