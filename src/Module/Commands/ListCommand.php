@@ -60,7 +60,7 @@ class ListCommand extends Command
                 $module->getDescription(),
                 $path,
                 $module->getEntry(),
-                'Normal'
+                $module->isEnabled() ? 'Normal':'Disabled'
             ]);
         });
         $this->table($this->headers, $list->toArray());
