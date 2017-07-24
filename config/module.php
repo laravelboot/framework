@@ -11,7 +11,7 @@
 return [
     'directory' => 'modules',
     'deep'      => 1,
-    'demo'=>[
+    'laravelboot/demo'=>[
         'enabled'=>true
     ]
 ];
