@@ -11,4 +11,7 @@
 return [
     'directory' => 'modules',
     'deep'      => 1,
+    'demo'=>[
+        'enabled'=>true
+    ]
 ];

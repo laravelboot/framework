@@ -149,7 +149,7 @@ class ModuleManager
                                 $module->setAuthor($authors);
                                 $module->setDescription($description);
                                 $module->setDirectory($directory);
-                                $module->setEnabled($this->container->isInstalled() ? $this->container->make('setting')->get('module.' . $identification . '.enabled', false) : false);
+                                $module->setEnabled($this->container->isInstalled() ? $this->container->make('config')->get('module.' . $identification . '.enabled', false) : false);
                                 $module->setInstalled($this->container->isInstalled() ? $this->container->make('setting')->get('module.' . $identification . '.installed', false) : false);
                                 $module->setEntry($provider);
                                 if (method_exists($provider, 'alias')) {

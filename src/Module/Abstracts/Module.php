@@ -53,7 +53,6 @@ abstract class Module extends ServiceProvider
     abstract public function boot();
 
 
-
     /**
      * @param array|string $paths
      */
@@ -63,7 +62,8 @@ abstract class Module extends ServiceProvider
         parent::loadMigrationsFrom($paths);
     }
 
-    public static function migrations() {
+    public static function migrations()
+    {
         return static::$migrations->toArray();
     }
 }
