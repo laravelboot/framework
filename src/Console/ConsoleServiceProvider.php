@@ -47,6 +47,7 @@ class ConsoleServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
+        'AppName'         => 'command.app.name',
         'ClearCompiled'   => 'command.clear-compiled',
         'ClearResets'     => 'command.auth.resets.clear',
         'ConfigCache'     => 'command.config.cache',

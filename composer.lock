@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "074afe536c2b6a9bd4805c3dcf20d0b2",
-    "content-hash": "2c57b8da3ca927b5bdaaf42ad3498363",
+    "hash": "c687388ab39dca5217953eb768577f0a",
+    "content-hash": "34543f53e4ab5db95152245d99fffab2",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -1927,6 +1927,48 @@
                 "passport"
             ],
             "time": "2017-06-14 21:58:27"
+        },
+        {
+            "name": "laravelboot/installers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravelboot/installers.git",
+                "reference": "ee97565e9cb0ef40eb50f5b30ba4459bc30cfbac"
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "LaravelBoot\\Installer\\Composer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelBoot\\Installer\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "LaravelBoot\\Installer\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "mawenpei",
+                    "email": "249350293@qq.com"
+                }
+            ],
+            "keywords": [
+                "cms",
+                "installers",
+                "laravelboot",
+                "plugin"
+            ],
+            "time": "2017-07-20 02:10:34"
         },
         {
             "name": "lcobucci/jwt",
@@ -4293,7 +4335,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "laravelboot/installers": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

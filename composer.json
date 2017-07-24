@@ -78,6 +78,13 @@
 		"guzzlehttp/guzzle":"^6.0",
 		"endroid/qrcode": "^1.7",
 		"pda/pheanstalk": "~3.0",
-        "hprose/hprose": ">=2.0.23"
-	}
+        "hprose/hprose": ">=2.0.23",
+        "laravelboot/installers": "dev-master"
+	},
+    "repositories":[
+        {
+            "type":"git",
+            "url":"https://github.com/laravelboot/installers.git"
+        }
+    ]
 }

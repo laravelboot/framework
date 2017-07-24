@@ -17,6 +17,7 @@ use LaravelBoot\Foundation\Http\Abstracts\ServiceProvider;
 use LaravelBoot\Foundation\Module\Commands\GenerateCommand;
 use LaravelBoot\Foundation\Module\Commands\ListCommand;
 use LaravelBoot\Foundation\Module\Commands\ListUnloadedCommand;
+use LaravelBoot\Foundation\Module\Commands\OpCommand;
 use LaravelBoot\Foundation\Module\Listeners\CsrfTokenRegister;
 use LaravelBoot\Foundation\Module\Listeners\PermissionGroupRegister;
 use LaravelBoot\Foundation\Module\Listeners\PermissionRegister;
@@ -51,7 +52,6 @@ class ModuleServiceProvider extends ServiceProvider
         $this->app->make(Dispatcher::class)->subscribe(CsrfTokenRegister::class);
         $this->app->make(Dispatcher::class)->subscribe(PermissionGroupRegister::class);
         $this->app->make(Dispatcher::class)->subscribe(PermissionRegister::class);
-        //$this->app->make(Dispatcher::class)->subscribe(RouteRegister::class);
         $this->app->make(ModuleManager::class)->getEnabledModules()->each(function (Module $module) {
             $path = $module->getDirectory();
             if ($this->files->isDirectory($path) && is_string($module->getEntry())) {
@@ -62,6 +62,7 @@ class ModuleServiceProvider extends ServiceProvider
             GenerateCommand::class,
             ListCommand::class,
             ListUnloadedCommand::class,
+            OpCommand::class
         ]);
     }
 

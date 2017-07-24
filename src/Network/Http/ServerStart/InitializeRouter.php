@@ -20,11 +20,5 @@ class InitializeRouter
      */
     public function bootstrap($server)
     {
-        $app = Application::getInstance();
-        $router = $app['router'];
-        $router->get('/admin/home/index',function(){
-            return ['code'=>200,'data'=>['title'=>'Hello World']];
-        });
-
     }
 }
